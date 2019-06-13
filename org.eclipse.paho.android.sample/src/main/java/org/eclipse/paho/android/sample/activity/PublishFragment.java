@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -23,8 +24,9 @@ import org.eclipse.paho.android.sample.internal.Connections;
 import java.util.Map;
 
 
-public class PublishFragment extends Fragment {
+public class PublishFragment extends Fragment  {
 
+    Switch grip = null;
     private Connection connection;
 
     private int selectedQos = 0;
@@ -57,9 +59,6 @@ public class PublishFragment extends Fragment {
 
         System.out.println("FRAGMENT CONNECTION: " + this.getArguments().getString(ActivityConstants.CONNECTION_KEY));
         System.out.println("NAME:" + connection.getId());
-
-
-
     }
 
     @Override
@@ -130,63 +129,92 @@ public class PublishFragment extends Fragment {
 //        qos.setAdapter(adapter);
 
         //perintah maju
-        Button publishMaju = rootView.findViewById(R.id.publish_maju);
+        ImageView publishMaju = rootView.findViewById(R.id.publish_maju);
         publishMaju.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Publising: [topic: maju, message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
-                        "]");
-                ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
-            }
+                    System.out.println("Publising: [topic: majuw message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                            "]");
+                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                }
         });
 
         //perintah mundur
-        Button publishMundur = rootView.findViewById(R.id.publish_mundur);
+        ImageView publishMundur = rootView.findViewById(R.id.publish_mundur);
         publishMundur.setOnClickListener(new View.OnClickListener() {
-            @Override
+        @Override
             public void onClick(View v) {
-                System.out.println("Publising: [topic: mundur, message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
-                        "]");
-                ((MainActivity) getActivity()).publishMundur(connection, topic, number, selectedQos, retainValue);
-            }
+                    System.out.println("Publising: [topic: mundurs message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                            "]");
+                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                }
         });
 
         //perintah kiri
-        Button publishKiri = rootView.findViewById(R.id.publish_kiri);
+        ImageView publishKiri = rootView.findViewById(R.id.publish_kiri);
         publishKiri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Publising: [topic: kiri, message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
-                        "]");
-                ((MainActivity) getActivity()).publishKiri(connection, topic, number, selectedQos, retainValue);
-            }
+                    System.out.println("Publising: [topic: kiria message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                            "]");
+                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                }
         });
 
         //perintah kanan
-        Button publishKanan = rootView.findViewById(R.id.publish_kanan);
+        ImageView publishKanan = rootView.findViewById(R.id.publish_kanan);
         publishKanan.setOnClickListener(new View.OnClickListener() {
-            @Override
+    @Override
             public void onClick(View v) {
-                System.out.println("Publising: [topic: kanan, message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
-                        "]");
-                ((MainActivity) getActivity()).publishKanan(connection, topic, number, selectedQos, retainValue);
-            }
+                    System.out.println("Publising: [topic: kanand message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                            "]");
+                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                }
         });
 
-        //perintah stop
-        Button publishStop = rootView.findViewById(R.id.publish_stop);
-        publishStop.setOnClickListener(new View.OnClickListener() {
-            @Override
+        //perintah diagonal atas kanan
+        ImageView publishDiagataskanan = rootView.findViewById(R.id.publish_diagataska);
+        publishMaju.setOnClickListener(new View.OnClickListener() {
+    @Override
             public void onClick(View v) {
-                System.out.println("Publising: [topic: stop , message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
-                        "]");
-                ((MainActivity) getActivity()).publishStop(connection, topic, number, selectedQos, retainValue);
-            }
+                    System.out.println("Publising: [topic: diag1 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                            "]");
+                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                }
         });
 
-        // set a change listener on the SeekBar, seekbar untuk mengatur kecepatan
-        bar1 = rootView.findViewById(R.id.seekBar);
-        bar1.setOnSeekBarChangeListener(seekBarChangeListener);
+        //perintah diagonal bawah kanan
+        ImageView publishDiagbawahkanan = rootView.findViewById(R.id.publish_diagbawahka);
+        publishMaju.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    System.out.println("Publising: [topic: diag2 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                            "]");
+                    ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+                }
+        });
+
+        //perintah diagonal atas kiri
+        ImageView publishDiagataskiri = rootView.findViewById(R.id.publish_diagataski);
+        publishMaju.setOnClickListener(new View.OnClickListener() {
+        @Override
+            public void onClick(View v) {
+            System.out.println("Publising: [topic: diag4 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                    "]");
+            ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+        }   });
+
+        //perintah diagonal bawah kiri
+        ImageView publishDiagbawahkiri = rootView.findViewById(R.id.publish_diagbawahki);
+        publishMaju.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Publising: [topic: diag3 message: " + message + ", QoS: " + selectedQos + ", Retain: " + retainValue +
+                        "]");
+                ((MainActivity) getActivity()).publishMaju(connection, topic, number, selectedQos, retainValue);
+            }  });
+
+
 
         // set a change listener on the SeekBar, seekbar untuk mengatur servo1
         bar2 = rootView.findViewById(R.id.seekBar2);
@@ -200,9 +228,6 @@ public class PublishFragment extends Fragment {
         bar4 = rootView.findViewById(R.id.seekBar4);
         bar4.setOnSeekBarChangeListener(seekBarChangeListener);
 
-        int progress = bar1.getProgress();
-        tvProgressLabel = rootView.findViewById(R.id.textView);
-        tvProgressLabel.setText("" + progress);
 
         int progress2 = bar2.getProgress();
         tvProgressLabel2 = rootView.findViewById(R.id.textView2);
@@ -219,34 +244,31 @@ public class PublishFragment extends Fragment {
         // Inflate the layout for this fragment
         return rootView;
     }
+
     //update seekbar kecepatan dan servo
     SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
 
         @Override
         public void onProgressChanged(SeekBar bar, int progress, boolean fromUser) {
-         if(bar.equals(bar1)) {
-             // updated continuously as the user slides the thumb
-             tvProgressLabel.setText("" + progress);
-             number = tvProgressLabel.getText().toString();
-         }
-         //servo1
-         if(bar.equals(bar2)){
-             // updated continuously as the user slides the thumb
-             tvProgressLabel2.setText("" + progress);
-             number2 = tvProgressLabel2.getText().toString();
-         }
-         //servo2
-         if(bar.equals(bar3)){
-             // updated continuously as the user slides the thumb
-             tvProgressLabel3.setText("" + progress);
-             number3 = tvProgressLabel3.getText().toString();
-         }
-         //servo3
-         else if(bar.equals(bar4)){
-             // updated continuously as the user slides the thumb
-             tvProgressLabel4.setText("" + progress);
-             number4 = tvProgressLabel4.getText().toString();
-         }
+
+            //servo1
+            if (bar.equals(bar2)) {
+                // updated continuously as the user slides the thumb
+                tvProgressLabel2.setText("" + progress);
+                number2 = tvProgressLabel2.getText().toString();
+            }
+            //servo2
+            if (bar.equals(bar3)) {
+                // updated continuously as the user slides the thumb
+                tvProgressLabel3.setText("" + progress);
+                number3 = tvProgressLabel3.getText().toString();
+            }
+            //servo3
+            else if (bar.equals(bar4)) {
+                // updated continuously as the user slides the thumb
+                tvProgressLabel4.setText("" + progress);
+                number4 = tvProgressLabel4.getText().toString();
+            }
 
         }
 
@@ -258,24 +280,22 @@ public class PublishFragment extends Fragment {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             // called after the user finishes moving the SeekBar
-            if(seekBar.equals(bar2)){
+            if (seekBar.equals(bar2)) {
 
                 ((MainActivity) getActivity()).bar1(connection, topic, number2, selectedQos, retainValue);
             }
 
-            if(seekBar.equals(bar3)){
+            if (seekBar.equals(bar3)) {
 
                 ((MainActivity) getActivity()).bar2(connection, topic, number3, selectedQos, retainValue);
             }
 
-            if(seekBar.equals(bar4)){
+            if (seekBar.equals(bar4)) {
 
                 ((MainActivity) getActivity()).bar3(connection, topic, number4, selectedQos, retainValue);
             }
 
         }
     };
-
-
 
 }

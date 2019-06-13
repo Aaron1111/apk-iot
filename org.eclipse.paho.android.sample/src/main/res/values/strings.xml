@@ -107,6 +107,12 @@
 
     <!-- Message List Item -->
     <string name="message_topic">Topic: </string>
+    <string name="Defaultarm">Default Arm Position</string>
+    <string name="grip">Grip</string>
+    <string name="cutter">Cutter</string>
+    <string name="servo3">Servo3</string>
+    <string name="servo2">Servo2</string>
+    <string name="servo1">Servo1</string>
 
 
 </resources>
